@@ -49,6 +49,19 @@ kubectl port-forward svc/argocd-server -n argocd 8888:443
 - To add an app, follow the guide found in the link below:
    - Creating Apps via GUI: https://argo-cd.readthedocs.io/en/stable/getting_started/#creating-apps-via-ui
 
+## Step 7: Test accessing your deployed app
+
+### Openm a new shell session amd get all information to find the service (e.g we will use the line with `service/myhelmap`)
+```bash
+kubectl get all -n dev
+```
+
+### Setup port forwarding to your app
+```bash
+kubectl port-forward service/myhelmapp -n dev 8889:80
+```
+
+- Visit `http://localhost:8889`
 
  
 ## Additional Notes
