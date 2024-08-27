@@ -51,7 +51,7 @@ kubectl port-forward svc/argocd-server -n argocd 8888:443
 
 ## Step 7: Test accessing your deployed app
 
-### Openm a new shell session amd get all information to find the service (e.g we will use the line with `service/myhelmap`)
+### Open a new shell session amd get all information to find the service (e.g we will use the line with `service/myhelmap`)
 ```bash
 kubectl get all -n dev
 ```
@@ -63,11 +63,24 @@ kubectl port-forward service/myhelmapp -n dev 8889:80
 
 - Visit `http://localhost:8889`
 
+## Step 8: Setup a test API via the UI 
+- To add an app, follow the guide found in the link below:
+   - Creating Apps via GUI: https://argo-cd.readthedocs.io/en/stable/getting_started/#creating-apps-via-ui
+
+## Step 9: Test deploying out the FastAPI Star Wars API Wrapper
+- Using the helm chart repo below, add this into the GUI and then select the `fastapi-starwars-api-helm-chart` path
+    - Helm chart repo: https://github.com/bmorri13/starwars_api_helm_charts
+
+### In a seperate browser window, test going to the below address:
+- Visit `http://<ip of your cluster / instance>:30005`
+> NOTE: This chart was tested on a local k3s cluster meaning the node port forwarding may need to be updated to account for a different cluster type
+
  
 ## Additional Notes
 - This guide was put together by using:
   - ArgoCD Steps: [https://argo-cd.readthedocs.io/en/stable/getting_started/](https://argo-cd.readthedocs.io/en/stable/getting_started/)
   - Sample Helm Chart: [https://github.com/devopsjourney1/argo-examples](https://github.com/devopsjourney1/argo-examples)
+  - Sample Helm Chart API's: [https://github.com/bmorri13/fastapi_multistage_starwars_api_wrapper](https://github.com/bmorri13/fastapi_multistage_starwars_api_wrapper)
 
 ## To Do Items
 - Test out creating apps via CLI: https://argo-cd.readthedocs.io/en/stable/getting_started/#creating-apps-via-cli
