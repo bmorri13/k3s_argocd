@@ -72,7 +72,7 @@ kubectl port-forward service/myhelmapp -n dev 8889:80
     - Helm chart repo: https://github.com/bmorri13/starwars_api_helm_charts
 
 ### In a seperate browser window, test going to the below address:
-- Visit `http://<ip of your cluster / instance>:30005`
+- Visit `http://<ip of your cluster or instance>:30005`
 > NOTE: This chart was tested on a local k3s cluster meaning the node port forwarding may need to be updated to account for a different cluster type
 
  
