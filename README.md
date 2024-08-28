@@ -51,7 +51,7 @@ kubectl port-forward svc/argocd-server -n argocd 8888:443
 
 ## Step 7: Test accessing your deployed app
 
-### Open a new shell session amd get all information to find the service (e.g we will use the line with `service/myhelmap`)
+### Open a new shell session amd get all information to find the service (e.g we will use the line with `service/myhelmapp`)
 ```bash
 kubectl get all -n dev
 ```
